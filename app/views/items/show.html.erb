@@ -1,0 +1,23 @@
+<h1> <%= @item.name %></h1>
+
+<div>
+  <ul>
+    <li> <%= image_tag @item.image %> </li>
+    <li> <%= @item.price %> </li>
+
+  </ul>
+</div>
+
+
+<div>
+  <table>
+    <thead>
+      <%= link_to "Write a Review", new_review_path(item_id: @item.id) %>
+    </thead>
+<tbody>
+  <% @item.reviews.each do |review|%>
+    <%= render partial: "review", locals: {review: review} %>
+  <% end %>
+</tbody>
+</table>
+</div>

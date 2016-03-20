@@ -1,0 +1,10 @@
+<h1>Welcome to my Store!</h1>
+
+<ul>
+  <% @item.each do |item|%>
+    <li>
+      <%= link_to item.name, item_path(item) %>
+      <%= image_tag item.image %>
+      <% end %>
+    </li>
+</ul>

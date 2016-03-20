@@ -1,0 +1,16 @@
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :item_id, @item.id %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :review %>
+    <%= f.text_field :review%>
+  </div>
+  <div>
+    <%= f.label :star %>
+    <%= f.number_field :star %>
+  </div>
+  <%= f.submit %>
+<% end %>
