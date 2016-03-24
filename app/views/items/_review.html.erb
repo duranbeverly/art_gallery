@@ -10,6 +10,8 @@
       <% end %>
     </p>
     <p><%= review.review %></p>
+    <% if current_user %>
     <%= link_to "Delete this Review", review, method: 'delete' %>
+    <%end%>
   </div>
 </div>

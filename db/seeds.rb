@@ -44,3 +44,10 @@ Item.create([
     price: 20
   }
   ])
+
+User.destroy_all
+User.create([
+  email: "duran.beverly@gmail.com",
+  password: "password",
+  password_confirmation: "password"
+  ])

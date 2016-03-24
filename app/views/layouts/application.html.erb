@@ -13,10 +13,23 @@
         <li><%= link_to "BD", root_path, class: "navbar-brand" %></li>
         <li><%= link_to "Items", items_path %></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+
+      </ul>
     </div>
   </nav>
-
   <div class="container">
+    <% if notice || alert %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </div>
 </body>
