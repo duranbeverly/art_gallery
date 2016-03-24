@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :items, only: [:index, :show]
-  resources :reviews, except: [:show]
+  resources :reviews, except: [:show, :edit, :update]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

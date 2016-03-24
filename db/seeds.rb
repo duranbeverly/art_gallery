@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Item.destroy_all
 Item.create([
   {
     name: "Birthday Minion!",
@@ -39,7 +40,7 @@ Item.create([
   },
   {
     name: "Link in a Jar",
-    image: "link_jar_s.jpg",
+    image: "/item_images/link_jar_s.jpg",
     price: 20
   }
   ])

@@ -1,6 +1,15 @@
-
-<tr>
-<p> <%= review.title %> </p>
-<p> <%= review.star %> </p>
-<p> <%= review.review %> </p>
-</tr>
+<div class="thumbnail">
+  <div class="caption">
+    <p><strong><%= review.title %></strong></p>
+    <p>
+      <% review.star.times do %>
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <% end %>
+      <% (5 - review.star).times do %>
+        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <% end %>
+    </p>
+    <p><%= review.review %></p>
+    <%= link_to "Delete this Review", review, method: 'delete' %>
+  </div>
+</div>

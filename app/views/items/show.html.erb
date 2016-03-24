@@ -1,23 +1,13 @@
-<h1> <%= @item.name %></h1>
-
-<div>
-  <ul>
-    <li> <%= image_tag @item.image %> </li>
-    <li> <%= @item.price %> </li>
-
-  </ul>
-</div>
-
-
-<div>
-  <table>
-    <thead>
-      <%= link_to "Write a Review", new_review_path(item_id: @item.id) %>
-    </thead>
-<tbody>
-  <% @item.reviews.each do |review|%>
-    <%= render partial: "review", locals: {review: review} %>
-  <% end %>
-</tbody>
-</table>
+<div class="row">
+  <div class="col-md-5">
+    <%= image_tag @item.image, class: "img-responsive img-rounded" %>
+  </div>
+  <div class="col-md-7">
+    <h1><%= @item.name %></h1>
+    <h2><%= number_to_currency(@item.price) %></h2>
+    <p><%= link_to "Write a Review", new_review_path(item_id: @item.id), class: "btn btn-primary btn-lg", role: "button" %></p>
+    <% @item.reviews.each do |review|%>
+      <%= render partial: "review", locals: {review: review} %>
+    <% end %>
+  </div>
 </div>
